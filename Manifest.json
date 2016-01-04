@@ -16,8 +16,17 @@
     {
       "GitUsername": "marcelo-spiezzi",
       "NkUsername": "marceloSR",
-      "Email": "marcelo.spiezzi@gmail.com",
-      "$$hashKey": "object:71"
+      "Email": "marcelo.spiezzi@gmail.com"
+    },
+    {
+      "GitUsername": "Maylyon",
+      "NkUsername": "Maylyon",
+      "Email": ""
+    },
+    {
+      "GitUsername": "CoreyClarkPhD",
+      "NkUsername": "doc",
+      "Email": ""
     }
   ],
   "Dependencies": [],
@@ -25,7 +34,7 @@
     "Miscellaneous"
   ],
   "Script": {
-    "File":  "Scripts/VakariModMain.lua",
+    "File": "Scripts/VakariModMain.lua",
     "Class": "VakariModMain"
   },
   "Media": [],
@@ -54,16 +63,13 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "We are distributing TUG keys for those willing to participate in this research. You can contact me at mspiezziraim@smu.edu to request a key. The key can redeemed on Steam by following these instructions.",
-                    "$$hashKey": "object:127"
+                    "Value": "We are distributing TUG keys for those willing to participate in this research. You can contact me at mspiezziraim@smu.edu to request a key. The key can redeemed on Steam by following these instructions."
                   },
                   {
                     "Type": "Paragraph",
-                    "Value": "https://support.steampowered.com/kb_article.php?ref=5414-TFBN-1352",
-                    "$$hashKey": "object:128"
+                    "Value": "https://support.steampowered.com/kb_article.php?ref=5414-TFBN-1352"
                   }
-                ],
-                "$$hashKey": "object:114"
+                ]
               },
               {
                 "Title": "Step 2",
@@ -71,16 +77,13 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "You can download the mod here http://devotus.nerdkingdom.com/mods/TUG/VakariMod .",
-                    "$$hashKey": "object:132"
+                    "Value": "You can download the mod here http://devotus.nerdkingdom.com/mods/TUG/VakariMod ."
                   },
                   {
                     "Type": "Paragraph",
-                    "Value": "Before you launch TUG, it is important that you add the mod to your local folder and update the mods file. https://tugwiki.com/wiki/Modifications",
-                    "$$hashKey": "object:133"
+                    "Value": "Before you launch TUG, it is important that you add the mod to your local folder and update the mods file. https://tugwiki.com/wiki/Modifications"
                   }
-                ],
-                "$$hashKey": "object:115"
+                ]
               },
               {
                 "Title": "Step 3",
@@ -88,14 +91,11 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus arcu at dui congue iaculis. Morbi placerat lorem laoreet sem elementum, vel laoreet sem ultricies. Cras aliquam, libero molestie vehicula vulputate, dui est condimentum nisi, eget sodales erat sem sit amet lectus. Donec nec imperdiet felis, porttitor sollicitudin nulla. Donec ac vestibulum ligula. Nam cursus tristique massa, in tempus elit molestie a. Suspendisse metus dolor, cursus malesuada eros id, convallis bibendum magna. Nullam laoreet est ante, id ornare ante finibus non.",
-                    "$$hashKey": "object:139"
+                    "Value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus arcu at dui congue iaculis. Morbi placerat lorem laoreet sem elementum, vel laoreet sem ultricies. Cras aliquam, libero molestie vehicula vulputate, dui est condimentum nisi, eget sodales erat sem sit amet lectus. Donec nec imperdiet felis, porttitor sollicitudin nulla. Donec ac vestibulum ligula. Nam cursus tristique massa, in tempus elit molestie a. Suspendisse metus dolor, cursus malesuada eros id, convallis bibendum magna. Nullam laoreet est ante, id ornare ante finibus non."
                   }
-                ],
-                "$$hashKey": "object:116"
+                ]
               }
-            ],
-            "$$hashKey": "object:82"
+            ]
           }
         ]
       },
@@ -107,13 +107,11 @@
         "Content": [
           {
             "Type": "Paragraph",
-            "Value": "",
-            "$$hashKey": "object:76"
+            "Value": ""
           },
           {
             "Type": "Paragraph",
-            "Value": "Etiam eget tincidunt nulla. Proin auctor iaculis mauris, vitae sollicitudin velit. Morbi et odio lorem. Donec in nisi a erat pellentesque porttitor. Nam risus neque, sagittis eget urna a, efficitur vulputate nibh. Duis et sem eu leo condimentum dictum. Mauris a gravida dui. Donec pretium tortor ut pellentesque pharetra. Quisque posuere aliquet massa eu ornare. Vivamus tincidunt massa ac erat commodo tempus. Nunc a dui sed nisl cursus tincidunt ac ut mauris. Nulla elementum non lectus sit amet fermentum. Nunc ac velit et orci vestibulum pharetra. Nullam nec enim eleifend, dignissim quam vel, tincidunt tellus. Donec vel commodo augue.",
-            "$$hashKey": "object:77"
+            "Value": "Etiam eget tincidunt nulla. Proin auctor iaculis mauris, vitae sollicitudin velit. Morbi et odio lorem. Donec in nisi a erat pellentesque porttitor. Nam risus neque, sagittis eget urna a, efficitur vulputate nibh. Duis et sem eu leo condimentum dictum. Mauris a gravida dui. Donec pretium tortor ut pellentesque pharetra. Quisque posuere aliquet massa eu ornare. Vivamus tincidunt massa ac erat commodo tempus. Nunc a dui sed nisl cursus tincidunt ac ut mauris. Nulla elementum non lectus sit amet fermentum. Nunc ac velit et orci vestibulum pharetra. Nullam nec enim eleifend, dignissim quam vel, tincidunt tellus. Donec vel commodo augue."
           }
         ]
       }
@@ -136,8 +134,7 @@
         "Color": "#d7c789",
         "Text": "#333333",
         "Background": "url(http://tugfiles.nerdkingdom.com/www/img/bg.jpg) center no-repeat fixed"
-      },
-      "$$hashKey": "object:13"
+      }
     }
   }
 }
