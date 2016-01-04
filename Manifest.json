@@ -1,27 +1,28 @@
 {
-    "Name": "VakariMod",
-    "Summary": "Mod to collect player data",
-    "Description": "",
-    "Website": "Devotus.github.io/TUG-VakariMod",
-    "Icon": "",
-    "Active": false,
-    "TargetGame": {
-        "Name": "TUG",
-        "Version": {
-            "Major": 0,
-            "Minor": 0,
-            "Revision": 0
-        }
-    },
-    "Authors": [
-        {
-            "GitUsername": "marcelo-spiezzi",
-            "NkUsername": "marceloSR",
-            "Email": "marcelo.spiezzi@gmail.com"
-        }
-    ],
-    "Dependencies": [],
-    "Categories": [
-        "Miscellaneous"
-    ]
+  "Name": "VakariMod",
+  "Summary": "Mod to collect player data",
+  "Description": "",
+  "Website": "Devotus.github.io/TUG-VakariMod",
+  "Icon": "",
+  "Active": true,
+  "TargetGame": {
+    "Name": "TUG",
+    "Version": {
+      "Major": 0,
+      "Minor": 0,
+      "Revision": 0
+    }
+  },
+  "Authors": [
+    {
+      "GitUsername": "marcelo-spiezzi",
+      "NkUsername": "marceloSR",
+      "Email": "marcelo.spiezzi@gmail.com"
+    }
+  ],
+  "Dependencies": [],
+  "Categories": [
+    "Miscellaneous"
+  ],
+  "Media": []
 }
