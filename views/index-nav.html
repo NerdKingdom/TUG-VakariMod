@@ -1,0 +1,5 @@
+<nav ng-if="!modManifest.WebPage.Theme.HideNavBar">
+	<a ng-click="msgHan.fire('jump', '#home');">Home</a>
+	<a ng-show="!modManifest.WebPage.DetailHidden" ng-click="system.changePage('modDetails'); msgHan.fire('jump', '#modDetails');">Details</a>
+	<a ng-repeat="section in modManifest.WebPage.Sections" ng-click="system.changePage(section.Title.makeID($index)); msgHan.fire('jump', '#' + section.Title.makeID($index));" >{{section.Title.firstWord().toTitleCase()}}</a>
+</nav>

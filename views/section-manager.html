@@ -1,0 +1,25 @@
+<section class="section userContent page-tab-view" data-index="{{sectionIndex}}" ng-repeat="section in sections track by $index" id="{{section.Title.makeID(sectionIndex)}}" ng-init="sectionIndex = $index" ng-click="msgHan.fire('EditOverlay.close')">
+	<div class="edit" ng-click="msgHan.fire('EditOverlay.open', $event);">
+		<i class="fa fa-pencil"></i>
+	</div>
+	<div class="delete up" ng-click="moveSectionUp($index)" ng-disabled="$first" style="top:85px">
+		<i class="fa fa-arrow-up"></i>
+	</div>
+	<div class="delete down" ng-disabled="$last" ng-click="moveSectionDown($index)" style="top:110px">
+		<i class="fa fa-arrow-down"></i>
+	</div>
+	<div class="delete" ng-click="manifest.deleteSection($event);" style="top:135px">
+		<i class="fa fa-trash-o"></i>
+	</div>
+	<div class="row content-block-invisible" ng-style="{'background': section.Background}">
+		<div class="small-12 medium-12 columns">
+			<h2>
+				<i ng-show="section.Icon" class="inline fa fa-{{section.Icon}}"></i>
+				{{section['Headline'] || section.Title}}
+			</h2>
+			<div class="row">
+				<content-manager data-section="section"></content-manager>
+			</div>
+		</div>
+	</div>
+</section>

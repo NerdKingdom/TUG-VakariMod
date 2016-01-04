@@ -1,0 +1,94 @@
+<div id="editOverlay">
+    <ng-include src="template"></ng-include>
+</div>
+<script type="text/ng-template" class="editFields" id="homeEdit">
+    <div style="position:relative; top:35px">
+        <div class="inline thirdwidth">
+            <div class="field" style="width:260px">
+                <h2 class="white">{{modManifest.Name}}<h4 class="white">A mod for {{modManifest.TargetGame.Name}}</h4></h2>
+                <p class="white" style="margin-top:40px">This page is populated off of your mod's
+                    <!--'-->manifest.</p>
+                <p class="white">To edit mod properties not listed here please visit the Devotus portal.</p>
+            </div>
+        </div>
+        <div class="inline thirdwidth">
+            <div class="field">
+                <label>Summary</label>
+                <textarea style="resize: none" class="double" ng-model="modManifest.Summary" placeholder="Summary"></textarea>
+            </div>
+            <div class="field">
+                <label>Mod Icon</label>
+                <input onClick="this.setSelectionRange(0, this.value.length)" ng-model="modManifest.Icon" ng-keyup="resize()" placeholder="http://www.domain.com/image.png"></input>
+            </div>
+        </div>
+        <div class="inline thirdwidth">
+            <list-view class="mediaList" name="Media" title="Header Media" data-field="Src" ng-model="modManifest.WebPage.HeaderMedia" edit-mode="false" template-function="displayMediaListItem" ng-change="{{mediaChange()}}" add-button="openMediaBrowser"></list-view>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" class="editFields" id="modDetailsEdit">
+    <div>
+        <div class="left halfwidth">
+            <div class="field">
+                <label>Description</label>
+                <textarea style="resize: none" class="double" ng-model="modManifest.Description" placeholder="Description"></textarea>
+            </div>
+            <div class="field">
+                <list-view class="mediaList" name="Media" title="Detail Media" data-field="Src" ng-model="modManifest.WebPage.DetailMedia" edit-mode="false" template-function="displayMediaListItem" add-button="openMediaBrowser"></list-view>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" class="editFields" id="sectionEdit">
+    <div>
+        <div class="inline thirdwidth ascroll">
+            <div class="field">
+                <label>Title</label>
+                <input ng-model="selected.section.Title" placeholder="My Section"></input>
+            </div>
+            <div class="field">
+                <label>Headline (optional)</label>
+                <textarea class="single" ng-model="selected.section.Headline" placeholder="Longer section title"></textarea>
+            </div>
+            <div class="field" style="margin-bottom:0px">
+                <label>Columns</label>
+                <select ng-model="selected.section.Columns" ng-change="columnChange()" style="margin-bottom:5px">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Icon</label>
+                <select ng-model="selected.section.Icon" ng-options="item as item for item in icons"></select>
+            </div>
+        </div>
+        <div class="inline thirdwidth">
+            <div class="field" ng-if="selected.content.Type == 'Paragraph'">
+                <label>Paragraph Text</label>
+                <textarea class="quad" ng-model="selected.content.Value"></textarea>
+            </div>
+            <div class="field" ng-if="selected.content.Type == 'List'">
+                <list-view class="userList" name="Item" title="List" edit-mode="false" ng-model="selected.content.Items"></list-view>
+            </div>
+            <div class="field" ng-if="selected.content.Type == 'MediaElement'">
+                <div class="field inline" style="margin-left: 3%; width: 45%;">
+                    <label>Image Width</label>
+                    <input ng-model="selected.content.Width" placeholder="Width"></input>
+                </div>
+                <div class="field inline" style="margin-left: 3.6%;width: 45%; margin-top: 0px; margin-right: 0px;">
+                    <label>Image Height</label>
+                    <input ng-model="selected.content.Height" placeholder="Height"></input>
+                </div>
+                <list-view name="Media" title="Media Element" data-field="Src" ng-model="selected.content.Items" edit-mode="false" template-function="displayMediaListItem" add-button="openMediaBrowser" ng-change="$scope.$parent.mediaChange()"></list-view>
+            </div>
+            <div class="field" ng-if="selected.content.Type == 'Tabs'">
+                <list-view name="Tab" title="Tabs" data-field="Title" ng-model="selected.content.Items" edit-function="editTab" add-title="title" add-value="value" add-model="SectionModel"></list-view>
+            </div>
+        </div>
+        <div class="inline thirdwidth">
+            <list-view ng-if="subtab == false" name="Content" title="Section Content" data-field="Type" ng-model="selected.section.Content" edit-mode="false" add-options="contentTypes" add-title="title" add-value="value" template-function="displayContentItem" selected="selected.content" add-model="ContentModel" ng-change="{{contentAdded()}}"></list-view>
+            <list-view ng-if="subtab == true" name="Content" title="Section Content" data-field="Type" ng-model="selected.section.Content" edit-mode="false" add-options="tabContentTypes" add-title="title" add-value="value" template-function="displayContentItem" selected="selected.content" add-model="ContentModel" ng-change="{{contentAdded()}}"></list-view>
+        </div>
+    </div>
+</script>

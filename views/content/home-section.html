@@ -1,0 +1,22 @@
+<section class="banner primary section" id="home" ng-click="msgHan.fire('EditOverlay.close')">
+    <div class="edit" ng-click="msgHan.fire('EditOverlay.open', $event);">
+        <i class="fa fa-pencil"></i>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="row content-block-invisible">
+                <div class="small-12 medium-5 columns">
+                    <img ng-src="{{modManifest.Icon}}">
+                    <h2 class="ellipsis">{{modManifest.Name}}<div class="subtitle">A mod for {{modManifest.TargetGame.Name}}</div></h2>
+                    <h6 class="ellipsis">{{modManifest.Summary}}</h6>
+                    <a href="http://devotus.nerdkingdom.com/mods/{{modManifest.TargetGame.Name}}/{{modManifest.Name}}">
+                        <button class="btn-big btn-trans-white"><i class="inline fa fa-download small-hide" style="margin-right:20px"></i>Download in Devotus</button>
+                    </a>
+                </div>
+                <div class="small-12 medium-7 columns">
+                    <media-element data-media="modManifest.WebPage.HeaderMedia" title="home" height="375" width="560"></media-element>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

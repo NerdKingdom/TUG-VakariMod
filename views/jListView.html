@@ -1,0 +1,29 @@
+<ul class="imageList">
+    <li class="header">{{title || name}}</li>
+    <li ng-show="addPosition == 'top'" class="addImageList" class="field no-margin" style="padding-top:15px">
+        <i class="fa fa-plus inline" style="margin-right:20px; margin-left:3px"></i>
+        <input ng-show="!addOptions || addOptions.length == 0" ng-model-options="{updateOn: 'blur'}" ng-change="add()" ng-model="newItem" placeholder="{{'Add ' + (name || 'Item') + '...'}}" class="add"></input>
+        <select style="padding-top: 2px;" ng-show="addOptions.length > 0" ng-model="newItem" ng-change="add()" class="transparent no-margin inline add">
+            <option disabled value="">Add {{name}}...</option>
+            <option ng-repeat="option in addOptions" value="{{(addValue)?option[addValue]:option}}">{{(addTitle)?option[addTitle]:option}}</option>
+        </select>
+    </li>
+    <li ng-click="select(this, $event);" ng-class="{active: selected === item}" class="item" ng-repeat="item in ngModel track by $index">
+        {{display(item)}}
+        <button class="delete" ng-show="ngModel.length > 1" ng-click="delete($event)">
+            <i data-index="{{$index}}" class="fa fa-times-circle inline"></i>
+        </button>
+        <button class="edit" ng-show="editMode != 'false'" ng-click="update(ngModel, $index)">
+            <i data-index="{{$index}}" class="fa fa-pencil inline"></i>
+        </button>
+    </li>
+    <li ng-show="addPosition != 'top'" class="addImageList" class="field no-margin" style="padding-top:15px">
+        <i class="fa fa-plus inline" style="margin-right:20px; margin-left:3px"></i>
+        <input ng-show="(!addOptions || addOptions.length == 0) && !addButton" ng-model-options="{updateOn: 'blur'}" ng-change="add()" ng-model="newItem" placeholder="{{'Add ' + (name || 'Item') + '...'}}" class="add"></input>
+        <button ng-show="addButton" ng-click="addButton(ngModel)" style="padding:5px; margin:0px; background:none">{{'Add ' + (name || 'Item') + '...'}}</button>
+        <select style="padding-top: 2px;" ng-show="addOptions.length > 0" ng-model="newItem" ng-change="add()" class="transparent no-margin inline add">
+            <option disabled value="">Add {{name}}...</option>
+            <option ng-repeat="option in addOptions" value="{{(addValue)?option[addValue]:option}}">{{(addTitle)?option[addTitle]:option}}</option>
+        </select>
+    </li>
+</ul>

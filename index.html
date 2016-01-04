@@ -1,0 +1,111 @@
+<html ng-app="app" ng-controller="ModHomepageCtrl">
+
+<head>
+    <title>{{modManifest.Name}} - A Mod For TUG - Nerd Kindom</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,900,300italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="css/foundation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="css/notify.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script>
+    <script src="scripts/bootstrap-colorpicker.min.js"></script>
+    <script src="scripts/noty.js"></script>
+    <script src="scripts/intro.min.js"></script>
+    <script src="scripts/jUtils.js"></script>
+    <script src="scripts/modules/angular.intro.min.js"></script>
+    <script src="scripts/modules/ngEnter.js"></script>
+    <script src="scripts/modules/uuid.js"></script>
+    <script src="scripts/modules/MessageHandler.js"></script>
+    <script src="scripts/modules/Models.js"></script>
+    <script src="scripts/modules/BuilderNav.js"></script>
+    <script src="scripts/modules/IndexNav.js"></script>
+    <script src="scripts/modules/EditOverlay.js"></script>
+    <script src="scripts/modules/jListView.js"></script>
+    <script src="scripts/modules/WebServices.js"></script>
+    <script src="scripts/modules/content/MediaElement.js"></script>
+    <script src="scripts/modules/content/TabGroup.js"></script>
+    <script src="scripts/modules/content/HomeSection.js"></script>
+    <script src="scripts/modules/content/DetailSection.js"></script>
+    <script src="scripts/modules/SectionManager.js"></script>
+    <script src="scripts/modules/ContentManager.js"></script>
+    <script src="scripts/modules/popups/AlertPopup.js"></script>
+    <script src="scripts/modules/popups/AreYouSurePopup.js"></script>
+    <script src="scripts/modules/popups/CaptionPopup.js"></script>
+    <script src="scripts/modules/popups/ColorWindow.js"></script>
+    <script src="scripts/modules/popups/ImagePopup.js"></script>
+    <script src="scripts/modules/popups/MediaBrowser.js"></script>
+    <script src="scripts/modules/popups/SavePopup.js"></script>
+    <script src="scripts/modules/popups/UpdateListPopup.js"></script>
+    <script src="scripts/main.js"></script>
+    <style>
+    .edit {
+        display: none!important;
+    }
+    </style>
+</head>
+
+<body>
+    <div class='notifications top-left'></div>
+    <edit-overlay></edit-overlay>
+    <media-browser ng-model="modManifest.Media"></media-browser>
+    <color-window></color-window>
+    <index-nav></index-nav>
+    <div ng-view id="content" class="antiscroll-inner">
+        <div id="javascript" class="redbar">
+            <p>This page requires javascript</p>
+        </div>
+        <home-section></home-section>
+        <div ng-if="modManifest.WebPage.Theme.Layout == 'Tabbed'" class="row" style="margin-top:10px">
+            <div class="small-12 medium-12 columns" style="padding-left:0px">
+                <ul class="nav nav-tabs small-12 medium-12 columns detailNav pageTabs">
+                    <li role="presentation" class="active tab" id="details">
+                        <a ng-click="system.changePage('modDetails', $event)">Details</a>
+                    </li>
+                    <li role="presentation" class="tab" ng-repeat="content in modManifest.WebPage.Sections">
+                        <a ng-click="system.changePage(content.Title.makeID($index), $event)">{{content.Title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <detail-section></detail-section>
+        <section-manager data-sections="modManifest.WebPage.Sections"></section-manager>
+        <footer>
+            <div class="row content-block-invisible" style="padding-bottom:5px;">
+                <div class="small-12 medium-12 columns" style="padding-top:30px;  color:white">
+                    Powered by
+                    <a class="nk-link" href="http://www.nerdkingdom.com"><img class="inline" ng-src="http://tugfiles.nerdkingdom.com/www/img/logotype.png"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <alert-popup></alert-popup>
+    <caption-popup></caption-popup>
+    <save-popup></save-popup>
+    <image-popup></image-popup>
+    <ays-popup></ays-popup>
+    <script type="text/javascript">
+    //Google font init
+    WebFontConfig = {
+        google: {
+            families: ['Lato:400,900,300italic:latin']
+        }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+    </script>
+</body>
+
+</html>

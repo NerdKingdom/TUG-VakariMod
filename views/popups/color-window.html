@@ -1,0 +1,60 @@
+<div id="colorWindow">
+	<button style="top:50px!important;left:10px!important; width:80px" class="top-left transparent exit" ng-click="revertTheme()"><i class="inline fa fa-undo"></i><p class="inline m-l-5">Revert</p></button>
+	<button style="top:50px" class="top-right transparent exit" ng-click="close()"><i class="fa fa-times"></i></button>
+	<h4 style="margin-top:20px">Theme Presets</h4>
+	<p>Layout:</p>
+	<select ng-model="modManifest.WebPage.Theme.Layout" ng-change="layoutChange()">
+		<option value="Scroll">Scrolling Layout</option>
+		<option value="Tabbed">Tabbed Layout</option>
+	</select>
+	<p>Theme:</p>
+	<select ng-model="modManifest.WebPage.Theme" ng-options="theme as theme.Name for theme in themeLibrary" ng-change="changeTheme()">
+		<option value="" disabled>Change Theme...</option>
+	</select>
+	<h4>Color Groups</h4>
+	<div class="colorGroup">
+		<label>Primary</label>
+		<div class="colorField">
+			<label>Background:</label>
+			<div class="colorBlock primary" colorpicker="rgba" colorpicker-position="left" colorpicker-fixed-position="false" colorpicker-parent="true" colorpicker ng-change="refresh()" ng-model="modManifest.WebPage.Theme.Primary.Color"></div>
+		</div>
+		<div class="colorField">
+			<label>Text:</label>
+			<div class="colorBlock primary" colorpicker="rgba" colorpicker-position="left" colorpicker-fixed-position="false" colorpicker-parent="true"  colorpicker ng-change="refresh()" ng-model="modManifest.WebPage.Theme.Primary.Text">T</div>
+		</div>
+		<div class="colorField">
+			<label>Image:</label>
+			<div class="colorBlock primary" ng-click="selected.color = modManifest.WebPage.Theme.Primary; msgHan.fire('ImagePopup.open')"><i class="fa fa-file-image-o" style="line-height:30px"></i></div>
+		</div>
+	</div>
+	<div class="colorGroup">
+		<label>Secondary</label>
+		<div class="colorField">
+			<label>Background:</label>
+			<div class="colorBlock secondary" colorpicker="rgba" colorpicker-position="left" colorpicker-fixed-position="false" colorpicker-parent="true"  colorpicker ng-change="refresh()" ng-model="modManifest.WebPage.Theme.Secondary.Color"></div>
+		</div>
+		<div class="colorField">
+			<label>Text:</label>
+			<div class="colorBlock secondary" colorpicker="rgba" colorpicker-position="left" colorpicker-fixed-position="false" colorpicker-parent="true"  colorpicker ng-change="refresh()" ng-model="modManifest.WebPage.Theme.Secondary.Text">T</div>
+		</div>
+		<div class="colorField">
+			<label>Image:</label>
+			<div class="colorBlock secondary" ng-click="selected.color = modManifest.WebPage.Theme.Secondary; msgHan.fire('ImagePopup.open')" ><i class="fa fa-file-image-o" style="line-height:30px"></i></div>
+		</div>
+	</div>
+	<div class="colorGroup">
+		<label>Body</label>
+		<div class="colorField">
+			<label>Background:</label>
+			<div class="colorBlock bodyClass" colorpicker="rgba" colorpicker-position="left" colorpicker-fixed-position="false" colorpicker-parent="true"  colorpicker ng-change="refresh()" ng-model="modManifest.WebPage.Theme.Body.Color"></div>
+		</div>
+		<div class="colorField">
+			<label>Text:</label>
+			<div class="colorBlock bodyClass" colorpicker="rgba" colorpicker-position="left" colorpicker-fixed-position="false" colorpicker-parent="true"  colorpicker ng-change="refresh()" ng-model="modManifest.WebPage.Theme.Body.Text">T</div>
+		</div>
+		<div class="colorField">
+			<label>Image:</label>
+			<div class="colorBlock bodyClass" ng-click="selected.color = modManifest.WebPage.Theme.Body; msgHan.fire('ImagePopup.open')"><i class="fa fa-file-image-o" style="line-height:30px"></i></div>
+		</div>
+	</div>
+</div>

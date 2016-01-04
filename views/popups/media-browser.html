@@ -1,0 +1,40 @@
+<div id="mediaBrowser">
+    <div style="width: 590px; height:500px; overflow: auto">
+        <div ng-click="closeAdd()" style="height:100%">
+            <button class="top-right transparent exit" ng-click="close()"><i class="fa fa-times"></i></button>
+            <button class="top-right transparent exit" style="right:50px; top:20px" ng-click="delete()"><i class="fa fa-trash-o" ng-class="{red: _deleteMode == true}"></i></button>
+            <h4>Media</h4>
+            <div ng-repeat="media in _view" class="mediaThumbOverlay" ng-click="select(media)">
+                <i class="mediaThumbIcon fa" ng-class="(_deleteMode) ? 'fa-trash-o' : 'fa-check-circle'"></i>
+                <div class="inline mediaThumb" ng-style="{'background' : 'url(' + getLink(media) + ')'}" alt="{{media.Caption}}"></div>
+            </div>
+            <p ng-show="_view.length == 0 && !filtered">No media to display. Please add some.</p>
+            <p ng-show="_view.length == 0 && filtered">No more media to add to this element! Duplicates are not allowed.</p>
+        </div>
+        <div id="mediaBrowserAdd" class="primary bottom-right" ng-class="{mediaBrowserAddOverride: checkAddBackground()}">
+            <div class="fullwidth nooverflow">
+                <button class="top-right transparent exit" style="right:30px; top:26px" ng-click="closeAdd()"><i class="fa fa-times"></i></button>
+                <h5>Add Media</h5>
+                <div>
+                    <label>Type:</label>
+                    <select class="primary" ng-model="addMedia.type">
+                        <option value="Image">Image</option>
+                        <option value="Video">YouTube Video</option>
+                    </select>
+                </div>
+                <div>
+                    <label>URL:</label>
+                    <input class="primary fillwidth" placeholder="{{addMedia.placeholders[addMedia.type]}}" ng-model="addMedia.src" ng-keyup="addURLChange()"></input>
+                </div>
+                <div style="margin-top:15px">
+                    <label>Caption (Optional):</label>
+                    <textarea maxlength="100" class="primary fillwidth" placeholder="Caption" ng-model="addMedia.caption"></textarea>
+                </div>
+            </div>
+            <div class="bottom-right circle primary" ng-click="add()">
+                <p id="mediaBrowserAddError">You must provide a URL!</p>
+                <i class="fa fa-plus"></i>
+            </div>
+        </div>
+    </div>
+</div>

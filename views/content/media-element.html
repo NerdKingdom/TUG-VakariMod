@@ -1,0 +1,37 @@
+<div id="{{(section.Title || title).makeID(sectionIndex+''+contentIndex)}}Carousel" class="carousel slide" data-ride="carousel" style="height:{{content.Height}}px; width: {{content.Width}}px!important;">
+  <!-- Indicators -->
+	<ol class="carousel-indicators" ng-show="media.length > 1">
+		<li ng-repeat="image in media" data-target="#{{section.Title.firstWord().toLowerCase() + $index}}Carousel" data-slide-to="$index" class="active"></li>
+	</ol>
+
+  <!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+		<div ng-repeat="m in media track by $index" class="item" ng-class="{0:'active'}[$index]">
+			<div style="height:{{content.Height}}px; overflow: hidden;">
+				<img ng-show="m.charAt(0) == 'i'" ng-src="{{getLink(m)}}" alt="{{getCaption(m)}}">
+				<div ng-show="m.charAt(0) == 'v'" class="video-mask" ng-click="videoClick($event)" ng-style="{height: content.Height}"></div>
+				<iframe ng-show="m.charAt(0) == 'v'" class="youtube-player" type="text/html" width="{{content.Width}}" height="{{content.Height}}" ng-src="{{getLink(m)}}" frameborder="0" allowfullscreen=""></iframe>
+			</div>
+			<div class="carousel-caption" style="text-shadow:none">
+				{{getCaption(m)}}
+			</div>
+		</div>
+		<div ng-if="media.length == 0" class="item active">
+			<div style="height:{{content.Height}}px; overflow: hidden;">
+				<img src="http://www.mantapro.com.au/wp-content/uploads/2015/05/placeholder.png" style="height:100%;">
+			</div>
+			<div class="carousel-caption" style="text-shadow:none">
+			</div>
+		</div>	
+	</div>
+
+  <!-- Controls -->
+  	<a ng-show="media.length > 1" class="left carousel-control" href="#{{(section.Title || title).makeID(sectionIndex+''+contentIndex)}}Carousel" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+  	</a>
+	<a ng-show="media.length > 1" class="right carousel-control" href="#{{(section.Title || title).makeID(sectionIndex+''+contentIndex)}}Carousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>

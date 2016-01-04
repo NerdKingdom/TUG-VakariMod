@@ -1,0 +1,24 @@
+<div class="modal fade" id="savePopup" tabindex="-1" role="dialog" aria-labelledby="imagePopupTitle">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="savePopupTitle">Save Page</h4>
+      </div>
+      <div class="modal-body">
+        <p class="center">Login using your GitHub account connected to this Devotus Mod.</p>
+      	<div class="field">
+            <label>GitHub Username</label>
+            <input ng-enter="msgHan.fire('save', GitHubCreds); close()" ng-model="GitHubCreds.username" placeholder="GitHub Username"></input>
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input ng-enter="msgHan.fire('save', GitHubCreds); close()" type="password" ng-model="GitHubCreds.password" placeholder="Password"></input>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" ng-click="close()">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="msgHan.fire('save', GitHubCreds); close()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

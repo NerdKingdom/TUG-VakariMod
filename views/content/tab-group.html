@@ -1,0 +1,20 @@
+<div class="tabGroup">
+	<div class="row" style="margin-top:10px">
+		<div class="small-12 medium-12 columns" style="padding-left:0px">
+	        <ul class="nav nav-tabs small-12 medium-12 columns detailNav">
+	          <li role="presentation" class="tab" ng-repeat="tab in content.Items" ng-init="subSectionIndex = $index"><a ng-click="changeTab($event, tab.Title.makeID(sectionIndex + '' + contentIndex + '' + subSectionIndex))">{{tab.Title}}</a></li>
+	        </ul>
+	    </div>
+	</div>
+	<div class="row content-block-invisible tab-view section sub-tab {{($first)?'first':''}}" ng-repeat="tab in content.Items" id="{{tab.Title.makeID(sectionIndex + '' + contentIndex + '' + subSectionIndex)}}" data-subSection-index="{{subSectionIndex}}" data-content-index="{{contentIndex}}" data-index="{{sectionIndex}}"  ng-init="subSectionIndex = $index">
+	    <div class="edit" ng-click="msgHan.fire('EditOverlay.open', $event);">
+			<i class="fa fa-pencil"></i>
+		</div>
+		<div class="small-12 medium-12 columns">
+			<h2><i ng-if="tab.Icon" class="inline fa fa-{{tab.Icon}}"></i>{{tab['Headline'] || tab.Title}}</h2>
+			<div class="row">
+				<content-manager data-section="tab" subtab="true"></content-manager>
+			</div>
+		</div>
+	</div>
+</div>

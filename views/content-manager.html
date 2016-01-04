@@ -1,0 +1,27 @@
+<div ng-repeat="content in section.Content" class="inline small-{{12/section.Columns}} medium-{{12/section.Columns}} columns" ng-init="contentIndex = $index">
+	<ng-include src="content.Type" ></ng-include>
+</div>
+
+<script type="text/ng-template" id="Paragraph">
+	<p data-content-index="{{contentIndex}}" data-index="{{sectionIndex}}">
+		{{content.Value}}
+	</p>
+</script>
+
+<script type="text/ng-template" id="List">
+	<ul data-content-index="{{contentIndex}}" data-index="{{sectionIndex}}" >
+		<li ng-repeat="item in content.Items">{{item}}</li>
+	</ul>
+</script>
+
+<script type="text/ng-template" id="MediaElement">
+	<media-element data-content="content" data-content-index="{{contentIndex}}" 
+		data-index="{{sectionIndex}}" title="{{section.Title + $index}}" style="text-align:center;">
+	</media-element>
+</script>
+
+<script type="text/ng-template" id="Tabs">
+	<tab-group subtab="true" class="tabContainer" data-content-index="{{contentIndex}}" 
+		data-index="{{sectionIndex}}" data-content="content">
+	</tab-group>
+</script>

@@ -1,0 +1,42 @@
+<section id="modDetails" class="section page-tab-view" ng-show="!modManifest.WebPage['DetailHidden']" ng-click="msgHan.fire('EditOverlay.close')">
+    <div class="edit" ng-click="msgHan.fire('EditOverlay.open', $event);">
+        <i class="fa fa-pencil"></i>
+    </div>
+    <div class="delete" ng-click="msgHan.fire('EditOverlay.hideDetailSection');">
+        <i class="fa fa-eye-slash"></i>
+    </div>
+    <div class="row content-block-invisible">
+        <div class="small-12 medium-6 columns" ng-show="modManifest.WebPage.DetailMedia.length > 0">
+            <media-element data-media="modManifest.WebPage.DetailMedia" title="modDetails" height="375" width="480" change="addMedia()"></media-element>
+        </div>
+        <div class="small-12 medium-6 columns secondary detailBox">
+            <h2>Details</h2>
+            <h5 class="ellipsis nobreak">{{modManifest.Description}}</h5>
+            <ul class="modDetails">
+                <li>
+                    Authors:
+                    <div class="inline" ng-repeat="author in modManifest.Authors | orderBy: NkUsername">
+                        {{author.NkUsername}}
+                        <div class="inline" ng-if="!$last">,&nbsp;</div>
+                    </div>
+                </li>
+                <li>
+                    Compatible with: {{modManifest.TargetGame.Name}} {{modManifest.TargetGame.Version.Major}}.{{modManifest.TargetGame.Version.Minor}}.{{modManifest.TargetGame.Version.Revision}}
+                </li>
+                <li ng-show="modManifest.Categories.length > 0">
+                    Categories:
+                    <p style="margin-bottom:0px" class="inline" ng-repeat="cat in modManifest.Categories">
+                        {{cat}}{{(!$last)?',&nbsp;':''}}
+                    </p>
+                </li>
+                <li ng-show="modManifest.Dependencies.length > 0">
+                    Dependencies:
+                    <a href="#" class="inline" ng-repeat="dep in modManifest.Dependencies">
+                        {{dep.Name}} {{dep.Version.Major}}.{{dep.Version.Minor}}.{{dep.Version.Revision}}
+                        <div class="inline" ng-if="!$last">,&nbsp;</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

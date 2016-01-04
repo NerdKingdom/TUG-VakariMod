@@ -1,0 +1,24 @@
+<nav ng-show="!modManifest.WebPage.Theme.HideNavBar">
+	<div class="nav-inner">
+		<button ng-click="msgHan.fire('ColorWindow.open')" style="left:20px" class="circle">
+			<label>Theme Options</label>
+			<i class="inline fa fa-paint-brush" ></i>
+		</button>
+		<button ng-click="msgHan.fire('MediaBrowser.open')" style="left:40px" class="circle">
+			<label>Manage Media</label>
+			<i class="inline fa fa-file-image-o"></i> 
+		</button>
+		<button ng-click="modManifest.addSection('New Section')"style="left:60px" class="circle">
+			<label>Add Section</label>
+			<i class="inline fa fa-plus" style="left:24.5%"></i>
+		</button>
+		<button id="unhideDetail" ng-click="(modManifest.WebPage.DetailHidden)?unhideDetailSection():hideDetailSection()" class="circle" style="left:80px; display:inline-block;">
+			<label>{{(modManifest.WebPage.DetailHidden)?"Unhide Details":"Hide Details"}}</label>	
+			<i class="inline fa" ng-class="{'fa-eye': modManifest.WebPage.DetailHidden, 'fa-eye-slash': !modManifest.WebPage.DetailHidden}" style="left:20%; top:22%"></i>
+		</button>
+		<p id="title" class="medium-hide">Nerd Kingdom Page Editor</p>
+		<button id="save" title="Save" class="right circle absolute" style="background-color:#27ae60;" ng-click="msgHan.fire('SavePopup.open')">
+			<i class="inline fa fa-floppy-o relative"></i>
+		</button>
+	</div>
+</nav>

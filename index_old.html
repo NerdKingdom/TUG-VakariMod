@@ -1,0 +1,229 @@
+<html ng-app="app">
+	<head>
+		<title ng-controller="ModHomepageCtrl">{{modManifest.Name}} - A Mod For TUG - Nerd Kindom</title>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,900,300italic' rel='stylesheet' type='text/css'>
+		<link href="css/foundation.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link href="css/foundation.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-sanitize.min.js"></script>
+	</head>
+	<body ng-controller="ModHomepageCtrl">
+		<nav ng-if="!modManifest.WebPage.Theme.HideNavBar">
+			<a ng-click="system.jump('#home');">Home</a>
+			<a ng-click="system.changePage('detail'); system.jump('#modDetails');">Details</a>
+			<a ng-repeat="section in modManifest.WebPage.Sections" ng-click="system.changePage($index+2); system.jump('#' + section.Title.firstWord().toLowerCase() + $index);" >{{section.Title.firstWord().toTitleCase()}}</a>
+		</nav>
+		<div id="content">
+			<section class="banner primary" id="home">
+	        	<div class="row">
+	                <div class="small-12 columns">
+	                    <div class="row content-block-invisible">
+	                    	<div class="small-12 medium-5 columns">
+	                        	<img src="{{modManifest.Icon}}">
+	                            <h2>{{modManifest.Name}}<div class="subtitle">A mod for {{modManifest.TargetGame.Name}}</div></h2>
+	                            <h6>{{modManifest.Summary}}</h6>
+	                            <button class="btn-big btn-trans-white"><i class="inline fa fa-download small-hide" style="margin-right:20px"></i>Download in Devotus</button>
+	                        </div>
+	                        <div class="small-12 medium-7 columns">
+	                            <div class="flex-video">
+
+	                            </div>
+	                        </div>
+						</div>
+	                </div>
+	            </div>
+	        </section>
+	        <div ng-if="modManifest.WebPage.Theme.Layout == 'Tabbed'" class="row" style="margin-top:10px">
+    			<div class="small-12 medium-12 columns" style="padding-left:0px">
+			        <ul class="nav nav-tabs small-12 medium-12 columns detailNav pageTabs">
+		              <li role="presentation" class="active tab" id="details"><a ng-click="system.changePage('detail')">Details</a></li>
+		              <li role="presentation" class="tab" ng-repeat="content in modManifest.WebPage.Sections"><a ng-click="system.changePage($index+2)">{{content.Title}}</a></li>
+		            </ul>
+	            </div>
+            </div>
+	        <section id="modDetails" class="page-tab-view" ng-if="!modManifest.WebPage['DetailHidden']">
+	    		<div class="row content-block-invisible">
+	    			<div class="small-12 medium-6 columns" ng-if="modManifest.Media.Images.length > 0">
+	        			<div id="modDetailsCarousels" class="carousel slide" data-ride="carousel" style="height:305px">
+						  <!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li ng-repeat="image in modManifest.Media.Images" data-target="#modDetailsCarousels" data-slide-to="$index" class="active"></li>
+							</ol>
+
+						  <!-- Wrapper for slides -->
+						  <div class="carousel-inner" role="listbox">
+						    <div ng-repeat="image in modManifest.Media.Images" class="item" ng-class="{0:'active'}[$index]">
+						      <img src="{{image.src}}" alt="{{image.caption}}">
+						      <div class="carousel-caption" style="color:#333; text-shadow:none">
+						        {{image.caption}}
+						      </div>
+						    </div>
+						  </div>
+
+						  <!-- Controls -->
+						  <a class="left carousel-control" href="#modDetailsCarousels" role="button" data-slide="prev">
+						    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						    <span class="sr-only">Previous</span>
+						  </a>
+						  <a class="right carousel-control" href="#modDetailsCarousels" role="button" data-slide="next">
+						    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+						</div>
+					</div>
+					<div class="small-12 medium-6 columns secondary detailBox">
+						<h2>Details</h2>
+						<h5>{{modManifest.Description}}</h5>
+	            		<ul class="modDetails">
+	            			<li ng-if="modManifest.Authors.length > 0">Authors: <div class="inline" ng-repeat="author in modManifest.Authors | orderBy: NkUsername">{{author.NkUsername}}<div class="inline" ng-if="!$last">,&nbsp;</div></div></li>
+	                		<li>Compatible with: {{modManifest.TargetGame.Name}} {{modManifest.TargetGame.Version.Major}}.{{modManifest.TargetGame.Version.Minor}}.{{modManifest.TargetGame.Version.Revision}}</li>
+	                		<li ng-if="modManifest.Categories.length > 0">Categories: <a href="#" class="inline" ng-repeat="cat in modManifest.Categories">{{cat}}<div class="inline" ng-if="!$last">,&nbsp;</div></a></li>
+	                		<li ng-if="modManifest.Dependencies.length > 0">Dependencies: <a href="#" class="inline" ng-repeat="dep in modManifest.Dependencies">{{dep.Name}} {{dep.Version.Major}}.{{dep.Version.Minor}}.{{dep.Version.Revision}}<div class="inline" ng-if="!$last">,&nbsp;</div></a></li>
+	            		</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="userContent page-tab-view" ng-repeat="section in modManifest.WebPage.Sections track by $index" id="{{section.Title.firstWord().toLowerCase() + $index}}">
+	        	<div class="row content-block-invisible" style="background: {{section.Background}}">
+	        		<div class="small-12 medium-12 columns">
+	        			<h2><i ng-if="section.Icon" class="inline fa fa-{{section.Icon}}"></i>{{section['Headline'] || section.Title}}</h2>
+	        			<div  class="row">
+        					<div ng-repeat="content in section.Content" class="inline small-{{12/section.Columns}} medium-{{12/section.Columns}} columns">
+		        				<p data-index="{{$index}}" ng-if="content.Type == 'Paragraph'">{{content.Value}}</p>
+		        				<ul data-index="{{$index}}" ng-if="content.Type =='List'">
+		        					<li ng-repeat="item in content.Items">{{item}}</li>
+	        					</ul>
+                                <div data-index="{{$index}}" ng-if="content.Type == 'Video'"  style="text-align:center;">
+	        						<iframe class="youtube-player" type="text/html" width="560" height="315" ng-src="{{system.getYouTubeLink(content.Value)}}" frameborder="0" allowfullscreen=""></iframe>
+	        					</div>
+	        					<div data-index="{{$index}}" ng-if="content.Type == 'Image'">
+	    							<div id="{{section.Title.firstWord().toLowerCase()}}Carousel" class="carousel slide" data-ride="carousel" style="height:{{content.Height}}px; width: {{content.Width}px;">
+									  <!-- Indicators -->
+										<ol class="carousel-indicators" ng-show="content.Items.length > 1">
+											<li ng-repeat="image in content.Items" data-target="#{{section.Title.firstWord().toLowerCase()}}Carousel" data-slide-to="$index" class="active"></li>
+										</ol>
+
+									  <!-- Wrapper for slides -->
+										<div class="carousel-inner" role="listbox">
+											<div ng-repeat="image in content.Items" class="item" ng-class="{0:'active'}[$index]">
+											<div style="height:{{content.Height}}px; overflow: hidden">
+												<img src="{{image.src}}" alt="{{image.caption}}">
+											</div>
+											<div class="carousel-caption" style="text-shadow:none">
+												{{image.caption}}
+											</div>
+											</div>
+										</div>
+
+									  <!-- Controls -->
+									  	<a ng-show="content.Items.length > 1" class="left carousel-control" href="#{{section.Title.firstWord().toLowerCase()}}Carousel" role="button" data-slide="prev">
+										    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										    <span class="sr-only">Previous</span>
+									  	</a>
+										<a ng-show="content.Items.length > 1" class="right carousel-control" href="#{{section.Title.firstWord().toLowerCase()}}Carousel" role="button" data-slide="next">
+											<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+											<span class="sr-only">Next</span>
+										</a>
+									</div>
+	        					</div>
+	        					<div data-index="{{$index}}" ng-if="content.Type == 'Tabs'" class="tabContainer">
+		        					<div class="row" style="margin-top:10px">
+						    			<div class="small-12 medium-12 columns" style="padding-left:0px">
+									        <ul class="nav nav-tabs small-12 medium-12 columns detailNav">
+								              <li role="presentation" class="tab" ng-repeat="tab in content.Items"><a ng-click="system.changePage($index+1, tab.Title.firstWord().toLowerCase() + '' + $index, $event)">{{tab.Title}}</a></li>
+								            </ul>
+							            </div>
+						            </div>
+						            <div class="row content-block-invisible tab-view sub-tab {{($index == 0)?'first':''}}" ng-repeat="tab in content.Items" id="{{tab.Title.firstWord().toLowerCase() + '' + $index}}" data-index="{{$index}}">
+		        						<div class="small-12 medium-12 columns">
+		        							<h2><i ng-if="tab.Icon" class="inline fa fa-{{tab.Icon}}"></i>{{tab['Headline'] || tab.Title}}</h2>
+		        							<div class="row">
+			        							<div ng-repeat="content in tab.Content"  class="inline small-{{12/tab.Columns}} medium-{{12/tab.Columns}} columns">
+							        				<p ng-if="content.Type == 'Paragraph'">{{content.Value}}</p>
+							        				<ul ng-if="content.Type =='List'">
+							        					<li ng-repeat="item in content.Items">{{item}}</li>
+						        					</ul>
+						        					<div data-index="{{$index}}" ng-if="content.Type == 'Video'"  style="text-align:center;">
+						        						<iframe class="youtube-player" type="text/html" width="560" height="315" ng-src="{{system.getYouTubeLink(content.Value)}}" frameborder="0" allowfullscreen=""></iframe>
+						        					</div>
+						        					<div data-index="{{$index}}" ng-if="content.Type == 'Image'">
+						    							<div id="{{section.Title.firstWord().toLowerCase() + $index}}Carousel" class="carousel slide" data-ride="carousel" style="height:{{content.Height}}px; width: {{content.Width}}px!important;">
+														  <!-- Indicators -->
+															<ol class="carousel-indicators" ng-show="content.Items.length > 1">
+																<li ng-repeat="image in content.Items" data-target="#{{section.Title.firstWord().toLowerCase() + $index}}Carousel" data-slide-to="$index" class="active"></li>
+															</ol>
+
+														  <!-- Wrapper for slides -->
+															<div class="carousel-inner" role="listbox">
+																<div ng-repeat="image in content.Items" class="item" ng-class="{0:'active'}[$index]">
+																<div style="height:{{content.Height}}px; overflow: hidden;">
+																	<img src="{{image.src}}" alt="{{image.caption}}">
+																</div>
+																<div class="carousel-caption" style="text-shadow:none">
+																	{{image.caption}}
+																</div>
+																</div>
+															</div>
+
+														  <!-- Controls -->
+														  	<a ng-show="content.Items.length > 1" ng-show="content.Items.length > 1" class="left carousel-control" href="#{{section.Title.firstWord().toLowerCase() + $index}}Carousel" role="button" data-slide="prev">
+															    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+															    <span class="sr-only">Previous</span>
+														  	</a>
+															<a ng-show="content.Items.length > 1" ng-show="content.Items.length > 1" class="right carousel-control" href="#{{section.Title.firstWord().toLowerCase() + $index}}Carousel" role="button" data-slide="next">
+																<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+																<span class="sr-only">Next</span>
+															</a>
+														</div>
+						        					</div>
+							        			</div>
+						        			</div>
+		        						</div>
+	        						</div>
+					            </div>
+				            </div>
+	        			</div>
+	        		</div>
+	        	</div>
+	    	</section>
+
+	    	<footer>
+	        	<div class="row content-block-invisible" style="padding-bottom:5px;">
+	        		<div class="small-12 medium-12 columns" style="padding-top:30px;  color:white">
+	        			Powered by <a class="nk-link" href="http://www.nerdkingdom.com"><img class="inline" src="http://tugfiles.nerdkingdom.com/www/img/logotype.png"></a>
+	        		</div>
+	        	</div>
+	    	</footer>
+    	</div>
+
+
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="scripts/bootstrap-colorpicker.min.js"></script>
+		<script src="scripts/foundation/foundation.min.js"></script>
+		<script src="scripts/foundation/foundation.orbit.js"></script>
+		<script src="scripts/foundation/foundation.topbar.js"></script>
+		<script src="scripts/main.js"></script>
+		<script type="text/javascript">
+			//Google font init
+			  WebFontConfig = {
+			    google: { families: [ 'Lato:400,900,300italic:latin' ] }
+			  };
+			  (function() {
+			    var wf = document.createElement('script');
+			    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+			      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			    wf.type = 'text/javascript';
+			    wf.async = 'true';
+			    var s = document.getElementsByTagName('script')[0];
+			    s.parentNode.insertBefore(wf, s);
+			  })();
+		  </script>
+	</body>
+</html>
