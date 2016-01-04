@@ -24,6 +24,10 @@
   "Categories": [
     "Miscellaneous"
   ],
+  "Script": {
+    "File":  "Scripts/VakariModMain.lua",
+    "Class": "VakariModMain"
+  },
   "Media": [],
   "Icon": "http://tugfiles.nerdkingdom.com/www/img/tug-logo.png",
   "WebPage": {
