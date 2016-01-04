@@ -54,26 +54,6 @@
         ]
       },
       {
-        "Title": "Features",
-        "Headline": "",
-        "Icon": "cubes",
-        "Columns": "1",
-        "Content": [
-          {
-            "Type": "List",
-            "Items": [
-              "Awesome Feature 1",
-              "Spectacular Feature 2",
-              "Wonderful Feature 3",
-              "Crazy Feature 4",
-              "Mind-bending Feature 5"
-            ],
-            "$$hashKey": "object:98"
-          }
-        ],
-        "Background": "rgba(255,255,255,.4"
-      },
-      {
         "Title": "Instructions",
         "Headline": "",
         "Icon": "wrench",
