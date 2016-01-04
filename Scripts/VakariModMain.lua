@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
------------------ VAKARI MOD v1.0 CLIENT VERSION ------------------------------
+----------------- VAKARI MOD v1.1 CLIENT VERSION ------------------------------
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
@@ -136,7 +136,9 @@ function VakariModMain:CreateActionArray(SubAction, ActionID, UniqueValue)
 
 	local JSONString = '{"name":' .. actionArray[1] .. ',"subAction":' .. actionArray[2] .. ',"position":[' .. actionArray[3] .. ',' .. actionArray[4] .. ',' .. actionArray[5] .. '],"biome":' .. actionArray[6] .. ',"uniqueValue":' .. actionArray[7] .. '}'
 
-	VakariModMain:CallServerEvent(ActionID, JSONString)
+	if Eternus.IsClient then 
+		VakariModMain:CallServerEvent(ActionID, JSONString)
+	end
 end
 
 -- Call the specific server event based on the action ID
@@ -199,7 +201,9 @@ function VakariModMain:CalculatePlayerWalkDistance()
 
 	-- request the acion event if the distance is greater than the explore distance
 	if distance > walkDistanceToConsiderExplore then
-		VakariModMain:CreateActionArray("", 6, "")
+		if Eternus.IsClient then 
+			VakariModMain:CreateActionArray("", 6, "")
+		end
 	end
 end
 
@@ -214,7 +218,9 @@ function VakariModMain:LocalPlayerReady(Player)
 	globalWorldPlayer 		= Eternus.World:NKGetLocalWorldPlayer()
 	clientPlayerName		= globalWorldPlayer:NKGetPlayerName()
 
-	VakariModObject:RaiseServerEvent("ServerEvent_PlayerLog", { playerName = clientPlayerName , actionID = 10 })
+	if Eternus.IsClient then 
+		VakariModObject:RaiseServerEvent("ServerEvent_PlayerLog", { playerName = clientPlayerName , actionID = 10 })
+	end
 
 	playerRevived 			= false
 
@@ -250,7 +256,9 @@ end
 function VakariModMain:Leave()
 	NKWarn("VakariModMain>> Leave")
 
-	VakariModObject:RaiseServerEvent("ServerEvent_PlayerLog", { playerName = clientPlayerName , actionID = 11 })
+	if Eternus.IsClient then 
+		VakariModObject:RaiseServerEvent("ServerEvent_PlayerLog", { playerName = clientPlayerName , actionID = 11 })
+	end
 
 	--if Eternus.IsClient then
 	--	Eternus.InputSystem:NKRemoveInputContext(self.m_modInputContext)
@@ -272,7 +280,6 @@ function VakariModMain:Process(dt)
 			playerRevived = false
 			reviveTimer = 5
 			VakariModMain:ResetPlayerStoredPosition()
-			NKPrint("ended timer")
 		end
 	end
 
@@ -284,10 +291,10 @@ function VakariModMain:Process(dt)
 			playerIsCrafting = false
 			VakariModMain:ResetPlayerStoredPosition()
 
-			NKPrint("finished crafting")
-
 			-- Crafting event
-			VakariModMain:CreateActionArray("Regular", 4, craftedObject) --craftedObject
+			if Eternus.IsClient then 
+				VakariModMain:CreateActionArray("Regular", 4, craftedObject) --craftedObject
+			end
 		end
 	end
 
