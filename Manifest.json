@@ -1,7 +1,7 @@
 {
   "Name": "VakariMod",
   "Summary": "How we play TUG?",
-  "Description": "Vakari is a mod created to track players and their actions while playing TUG. The goal is to classify players according to their behaviors in a way Nerd Kindgom can improve the gameplay experience based on how we like to play TUG.",
+  "Description": "Vakari is a mod created to track players and their actions while playing TUG. \nThe goal is to classify players according to their behaviors in a way Nerd Kindgom can improve the gameplay experience based on how we like to play TUG.",
   "Website": "Devotus.github.io/TUG-VakariMod",
   "Active": true,
   "TargetGame": {
@@ -36,44 +36,6 @@
     "DetailHidden": false,
     "Sections": [
       {
-        "Title": "Changes",
-        "Headline": "To change or add sections, edit the mod's manifest.",
-        "Icon": "forumbee",
-        "Columns": "1",
-        "Content": [
-          {
-            "Type": "Paragraph",
-            "Value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus arcu at dui congue iaculis. Morbi placerat lorem laoreet sem elementum, vel laoreet sem ultricies. Cras aliquam, libero molestie vehicula vulputate, dui est condimentum nisi, eget sodales erat sem sit amet lectus. Donec nec imperdiet felis, porttitor sollicitudin nulla. Donec ac vestibulum ligula. Nam cursus tristique massa, in tempus elit molestie a. Suspendisse metus dolor, cursus malesuada eros id, convallis bibendum magna. Nullam laoreet est ante, id ornare ante finibus non.",
-            "$$hashKey": "object:76"
-          },
-          {
-            "Type": "Paragraph",
-            "Value": "Etiam eget tincidunt nulla. Proin auctor iaculis mauris, vitae sollicitudin velit. Morbi et odio lorem. Donec in nisi a erat pellentesque porttitor. Nam risus neque, sagittis eget urna a, efficitur vulputate nibh. Duis et sem eu leo condimentum dictum. Mauris a gravida dui. Donec pretium tortor ut pellentesque pharetra. Quisque posuere aliquet massa eu ornare. Vivamus tincidunt massa ac erat commodo tempus. Nunc a dui sed nisl cursus tincidunt ac ut mauris. Nulla elementum non lectus sit amet fermentum. Nunc ac velit et orci vestibulum pharetra. Nullam nec enim eleifend, dignissim quam vel, tincidunt tellus. Donec vel commodo augue.",
-            "$$hashKey": "object:77"
-          }
-        ]
-      },
-      {
-        "Title": "Features",
-        "Headline": "",
-        "Icon": "cubes",
-        "Columns": "1",
-        "Content": [
-          {
-            "Type": "List",
-            "Items": [
-              "Awesome Feature 1",
-              "Spectacular Feature 2",
-              "Wonderful Feature 3",
-              "Crazy Feature 4",
-              "Mind-bending Feature 5"
-            ],
-            "$$hashKey": "object:80"
-          }
-        ],
-        "Background": "rgba(255,255,255,.4"
-      },
-      {
         "Title": "Instructions",
         "Headline": "",
         "Icon": "wrench",
@@ -88,13 +50,18 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus arcu at dui congue iaculis. Morbi placerat lorem laoreet sem elementum, vel laoreet sem ultricies. Cras aliquam, libero molestie vehicula vulputate, dui est condimentum nisi, eget sodales erat sem sit amet lectus. Donec nec imperdiet felis, porttitor sollicitudin nulla. Donec ac vestibulum ligula. Nam cursus tristique massa, in tempus elit molestie a. Suspendisse metus dolor, cursus malesuada eros id, convallis bibendum magna. Nullam laoreet est ante, id ornare ante finibus non.",
+                    "Value": "We are distributing TUG keys for those willing to participate in this research. You can contact me at mspiezziraim@smu.edu to request a key. The key can redeemed on Steam by following these instructions. \n\nhttps://support.steampowered.com/kb_article.php?ref=5414-TFBN-1352",
                     "$$hashKey": "object:127"
                   },
                   {
                     "Type": "Paragraph",
-                    "Value": "Etiam eget tincidunt nulla. Proin auctor iaculis mauris, vitae sollicitudin velit. Morbi et odio lorem. Donec in nisi a erat pellentesque porttitor. Nam risus neque, sagittis eget urna a, efficitur vulputate nibh. Duis et sem eu leo condimentum dictum. Mauris a gravida dui. Donec pretium tortor ut pellentesque pharetra. Quisque posuere aliquet massa eu ornare. Vivamus tincidunt massa ac erat commodo tempus. Nunc a dui sed nisl cursus tincidunt ac ut mauris. Nulla elementum non lectus sit amet fermentum. Nunc ac velit et orci vestibulum pharetra. Nullam nec enim eleifend, dignissim quam vel, tincidunt tellus. Donec vel commodo augue.",
+                    "Value": "Before you launch the game, it is important that you ADD THE MOD TO YOUR LOCAL TUG FOLDER. You can download the mod here http://devotus.nerdkingdom.com/mods/TUG/VakariMod . To install it, you just need to follow these instructions. https://tugwiki.com/wiki/Modifications",
                     "$$hashKey": "object:128"
+                  },
+                  {
+                    "Type": "Paragraph",
+                    "Value": "The mods file should look like this: \nMods\n{\n\t\"Mods/VakariMod\"\n\t\"Game/Dev\"\n\t\"Game/Creative\"\n\t\"Game/Survival\"\n\t\"Game/Core\"\n}",
+                    "$$hashKey": "object:404"
                   }
                 ],
                 "$$hashKey": "object:114"
@@ -135,6 +102,24 @@
               }
             ],
             "$$hashKey": "object:82"
+          }
+        ]
+      },
+      {
+        "Title": "Changes",
+        "Headline": "What data we track?",
+        "Icon": "forumbee",
+        "Columns": "1",
+        "Content": [
+          {
+            "Type": "Paragraph",
+            "Value": "",
+            "$$hashKey": "object:76"
+          },
+          {
+            "Type": "Paragraph",
+            "Value": "Etiam eget tincidunt nulla. Proin auctor iaculis mauris, vitae sollicitudin velit. Morbi et odio lorem. Donec in nisi a erat pellentesque porttitor. Nam risus neque, sagittis eget urna a, efficitur vulputate nibh. Duis et sem eu leo condimentum dictum. Mauris a gravida dui. Donec pretium tortor ut pellentesque pharetra. Quisque posuere aliquet massa eu ornare. Vivamus tincidunt massa ac erat commodo tempus. Nunc a dui sed nisl cursus tincidunt ac ut mauris. Nulla elementum non lectus sit amet fermentum. Nunc ac velit et orci vestibulum pharetra. Nullam nec enim eleifend, dignissim quam vel, tincidunt tellus. Donec vel commodo augue.",
+            "$$hashKey": "object:77"
           }
         ]
       }
