@@ -62,7 +62,7 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "We are distributing TUG keys for those willing to participate in the research. You can contact me at mspiezziraim@smu.edu to request a key. The key can be redeemed on Steam by following these instructions.",
+                    "Value": "We are distributing TUG keys for those willing to participate in the research. You can contact me at mspiezziraim@smu.edu to request a key. The key can be redeemed on Steam by following these instructions:",
                     "$$hashKey": "object:124"
                   },
                   {
@@ -72,7 +72,7 @@
                   },
                   {
                     "Type": "Paragraph",
-                    "Value": "IMPORTANT: To participate in the research you must agree with the EULA described in Step 4",
+                    "Value": "IMPORTANT: To participate in the research you must agree with the EULA described in Step 4.",
                     "$$hashKey": "object:246"
                   }
                 ],
@@ -84,7 +84,7 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "You can download the mod here http://devotus.nerdkingdom.com/mods/TUG/VakariMod .",
+                    "Value": "Download the mod here http://devotus.nerdkingdom.com/mods/TUG/VakariMod",
                     "$$hashKey": "object:129"
                   },
                   {
@@ -113,16 +113,39 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "Now that everything is set up properly it's time to join the server and play TUG.",
+                    "Value": "Now that everything is set up properly it's time to join the server and play TUG!",
                     "$$hashKey": "object:134"
                   },
                   {
                     "Type": "Paragraph",
-                    "Value": "Select the multiplayer mode, choose to play as client and connect to the server IP 52.8.90.0",
+                    "Value": "In TUG, select the multiplayer mode, choose to play as client and connect to the server IP 52.8.90.0 using the port 6600.",
                     "$$hashKey": "object:287"
+                  },
+                  {
+                    "Type": "Paragraph",
+                    "Value": "You don't need to do anything else now, just enjoy the game! If you need any more information on how to play TUG, you can visit the game wiki at: https://tugwiki.com/wiki/Main_Page",
+                    "$$hashKey": "object:709"
                   }
                 ],
                 "$$hashKey": "object:113"
+              },
+              {
+                "0": "E",
+                "1": "U",
+                "2": "L",
+                "3": "A",
+                "Title": "EULA",
+                "Headline": "",
+                "Icon": "forumbee",
+                "Columns": "1",
+                "Content": [
+                  {
+                    "Type": "Paragraph",
+                    "Value": "EULA",
+                    "$$hashKey": "object:514"
+                  }
+                ],
+                "$$hashKey": "object:509"
               }
             ],
             "$$hashKey": "object:101"
@@ -137,13 +160,25 @@
         "Content": [
           {
             "Type": "Paragraph",
-            "Value": "",
+            "Value": "Our goal is to track all the important actions players can perform while playing TUG. The actions by itself cannot differentiate each user, but combining and cross-linking the data will allow us to make further assumptions on players’ behaviors.",
             "$$hashKey": "object:103"
           },
           {
             "Type": "Paragraph",
-            "Value": "Etiam eget tincidunt nulla. Proin auctor iaculis mauris, vitae sollicitudin velit. Morbi et odio lorem. Donec in nisi a erat pellentesque porttitor. Nam risus neque, sagittis eget urna a, efficitur vulputate nibh. Duis et sem eu leo condimentum dictum. Mauris a gravida dui. Donec pretium tortor ut pellentesque pharetra. Quisque posuere aliquet massa eu ornare. Vivamus tincidunt massa ac erat commodo tempus. Nunc a dui sed nisl cursus tincidunt ac ut mauris. Nulla elementum non lectus sit amet fermentum. Nunc ac velit et orci vestibulum pharetra. Nullam nec enim eleifend, dignissim quam vel, tincidunt tellus. Donec vel commodo augue.",
+            "Value": "Below is a sample of the actions we are collecting:",
             "$$hashKey": "object:104"
+          },
+          {
+            "Type": "List",
+            "Items": [
+              "Mining",
+              "Crafting",
+              "Farming",
+              "Hunting",
+              "Fighting",
+              "Etc."
+            ],
+            "$$hashKey": "object:570"
           }
         ]
       }
