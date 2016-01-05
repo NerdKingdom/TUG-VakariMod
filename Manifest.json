@@ -16,27 +16,26 @@
     {
       "GitUsername": "marcelo-spiezzi",
       "NkUsername": "marceloSR",
-      "Email": "marcelo.spiezzi@gmail.com"
+      "Email": "marcelo.spiezzi@gmail.com",
+      "$$hashKey": "object:58"
     },
     {
       "GitUsername": "Maylyon",
       "NkUsername": "Maylyon",
-      "Email": ""
+      "Email": "",
+      "$$hashKey": "object:59"
     },
     {
       "GitUsername": "CoreyClarkPhD",
       "NkUsername": "doc",
-      "Email": ""
+      "Email": "",
+      "$$hashKey": "object:60"
     }
   ],
   "Dependencies": [],
   "Categories": [
     "Miscellaneous"
   ],
-  "Script": {
-    "File": "Scripts/VakariModMain.lua",
-    "Class": "VakariModMain"
-  },
   "Media": [],
   "Icon": "http://tugfiles.nerdkingdom.com/www/img/tug-logo.png",
   "WebPage": {
@@ -63,13 +62,16 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "We are distributing TUG keys for those willing to participate in this research. You can contact me at mspiezziraim@smu.edu to request a key. The key can redeemed on Steam by following these instructions."
+                    "Value": "We are distributing TUG keys for those willing to participate in this research. You can contact me at mspiezziraim@smu.edu to request a key. The key can redeemed on Steam by following these instructions.",
+                    "$$hashKey": "object:122"
                   },
                   {
                     "Type": "Paragraph",
-                    "Value": "https://support.steampowered.com/kb_article.php?ref=5414-TFBN-1352"
+                    "Value": "https://support.steampowered.com/kb_article.php?ref=5414-TFBN-1352",
+                    "$$hashKey": "object:123"
                   }
-                ]
+                ],
+                "$$hashKey": "object:109"
               },
               {
                 "Title": "Step 2",
@@ -77,13 +79,28 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "You can download the mod here http://devotus.nerdkingdom.com/mods/TUG/VakariMod ."
+                    "Value": "You can download the mod here http://devotus.nerdkingdom.com/mods/TUG/VakariMod .",
+                    "$$hashKey": "object:127"
                   },
                   {
                     "Type": "Paragraph",
-                    "Value": "Before you launch TUG, it is important that you add the mod to your local folder and update the mods file. https://tugwiki.com/wiki/Modifications"
+                    "Value": "Before you launch TUG, it is important that you add the mod to your local folder and update the mods file. To do this, just follow the following instructions:",
+                    "$$hashKey": "object:128"
+                  },
+                  {
+                    "Type": "List",
+                    "Items": [
+                      "Unzip the mod.",
+                      "Locate your TUG folder (For steam users this should be C:\\Program Files (x86)\\Steam\\steamapps\\common\\TUG).",
+                      "Move the mod folder into the TUG\\Mods folder.",
+                      "Open the TUG\\Config\\mods.txt file.",
+                      "Add \"Mods/VakariMod\" (with quotation marks) to the top of the list.",
+                      "(Re)start TUG."
+                    ],
+                    "$$hashKey": "object:284"
                   }
-                ]
+                ],
+                "$$hashKey": "object:110"
               },
               {
                 "Title": "Step 3",
@@ -91,11 +108,24 @@
                 "Content": [
                   {
                     "Type": "Paragraph",
-                    "Value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus arcu at dui congue iaculis. Morbi placerat lorem laoreet sem elementum, vel laoreet sem ultricies. Cras aliquam, libero molestie vehicula vulputate, dui est condimentum nisi, eget sodales erat sem sit amet lectus. Donec nec imperdiet felis, porttitor sollicitudin nulla. Donec ac vestibulum ligula. Nam cursus tristique massa, in tempus elit molestie a. Suspendisse metus dolor, cursus malesuada eros id, convallis bibendum magna. Nullam laoreet est ante, id ornare ante finibus non."
+                    "Value": "Now that everything is set up properly is time to join the server and play TUG!",
+                    "$$hashKey": "object:132"
+                  },
+                  {
+                    "Type": "Paragraph",
+                    "Value": "Select the multiplayer mode, choose to play as client and connect to the server IP 52.8.90.0 using the port 6600.",
+                    "$$hashKey": "object:170"
+                  },
+                  {
+                    "Type": "Paragraph",
+                    "Value": "It is time to sit down and enjoy the game.  If you need any more information on how to play TUG, you can visit the game wiki at: https://tugwiki.com/wiki/Main_Page",
+                    "$$hashKey": "object:253"
                   }
-                ]
+                ],
+                "$$hashKey": "object:111"
               }
-            ]
+            ],
+            "$$hashKey": "object:99"
           }
         ]
       },
@@ -107,11 +137,8 @@
         "Content": [
           {
             "Type": "Paragraph",
-            "Value": ""
-          },
-          {
-            "Type": "Paragraph",
-            "Value": "Etiam eget tincidunt nulla. Proin auctor iaculis mauris, vitae sollicitudin velit. Morbi et odio lorem. Donec in nisi a erat pellentesque porttitor. Nam risus neque, sagittis eget urna a, efficitur vulputate nibh. Duis et sem eu leo condimentum dictum. Mauris a gravida dui. Donec pretium tortor ut pellentesque pharetra. Quisque posuere aliquet massa eu ornare. Vivamus tincidunt massa ac erat commodo tempus. Nunc a dui sed nisl cursus tincidunt ac ut mauris. Nulla elementum non lectus sit amet fermentum. Nunc ac velit et orci vestibulum pharetra. Nullam nec enim eleifend, dignissim quam vel, tincidunt tellus. Donec vel commodo augue."
+            "Value": "Our goal is to track all the important actions players can perform while playing TUG. The actions by itself cannot differentiate each type of behavior, but combining and cross-linking the data will allow us to make further assumptions on players’ behaviors.",
+            "$$hashKey": "object:102"
           }
         ]
       }
@@ -134,7 +161,12 @@
         "Color": "#d7c789",
         "Text": "#333333",
         "Background": "url(http://tugfiles.nerdkingdom.com/www/img/bg.jpg) center no-repeat fixed"
-      }
+      },
+      "$$hashKey": "object:57"
     }
+  },
+  "Script": {
+    "File": "Scripts/VakariModMain.lua",
+    "Class": "VakariModMain"
   }
 }
