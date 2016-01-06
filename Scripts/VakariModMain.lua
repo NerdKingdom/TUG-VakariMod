@@ -226,10 +226,6 @@ function VakariModMain:LocalPlayerReady(Player)
 
 end
 
-function VakariModMain:IsDedicatedServer()
-	return (Eternus.IsServer and not Eternus.IsClient)
-end
-
 function VakariModMain:Constructor()
 	NKWarn("VakariModMain>> Constructor")
 
@@ -309,7 +305,7 @@ function VakariModMain:InitKeybinds()
 end
 
 function VakariModMain:ServerEvent_AddEntry( args )
-	if (args.data == nil) then
+	if ((args.data == nil) or Eternus.IsClient) then
 		return
 	end
 	Eternus.VakariService:NKLogEvent(args.actionID, args.data)
@@ -317,7 +313,7 @@ end
 
 
 function VakariModMain:ServerEvent_PlayerLog( args )
-	if (args.playerName == nil) then
+	if ((args.playerName == nil) or Eternus.IsClient) then
 		return
 	end
 	Eternus.VakariService:NKLogEvent(args.actionID, args.playerName)
