@@ -134,7 +134,7 @@ function VakariModMain:CreateActionArray(SubAction, ActionID, UniqueValue)
 	actionArray[6] = VakariModMain:GetPlayerBiome()
 	actionArray[7] = UniqueValue
 
-	local JSONString = '{"name":' .. actionArray[1] .. ',"subAction":' .. actionArray[2] .. ',"position":[' .. actionArray[3] .. ',' .. actionArray[4] .. ',' .. actionArray[5] .. '],"biome":' .. actionArray[6] .. ',"uniqueValue":' .. actionArray[7] .. '}'
+	local JSONString = '{"name":"' .. actionArray[1] .. '","subAction":"' .. actionArray[2] .. '","position":[' .. actionArray[3] .. ',' .. actionArray[4] .. ',' .. actionArray[5] .. '],"biome":' .. actionArray[6] .. ',"uniqueValue":"' .. actionArray[7] .. '"}'
 
 	if Eternus.IsClient then 
 		VakariModMain:CallServerEvent(ActionID, JSONString)
